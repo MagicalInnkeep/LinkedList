@@ -18,13 +18,27 @@ class LinkedList {
     append(value) adds a new node containing value to the end of the list
     */
     append(value){
-
+        const newNode = new Node(value);
+        this.length++;
+        if(this.tailNode=== null){}
+        else{
+            this.tailNode.setNextNode(newNode);
+        }
+        this.tailNode=newNode;
     }
     /*
     prepend(value) adds a new node containing value to the start of the list
     */
     prepend(value){
-
+        let newNode;
+        this.length++;
+        if(this.headNode===null){ 
+            newNode= new Node(value);
+        }
+        else{
+           newNode = new Node(value, this.headNode);
+        }
+        this.headNode = newNode;
     }
     /*
     size returns the total number of nodes in the list
@@ -48,19 +62,47 @@ class LinkedList {
     at(index) returns the node at the given index
     */
     at(index){
-
+        if (index>=this.length){
+            return null;
+        }
+        else{
+            currNode = this.headNode;
+            for(let i=0;i<index;i++){
+                currNode = getNextNode();
+            }
+            return currNode;
+        }
     }
     /*
     pop removes the last element from the list
     */
     pop(){
+        if(this.length==0){
+            return null;
+        }
+        else{
+            this.length--;
+            popNode=this.tailNode;
+            this.tailNode = at(this.length);
+            this.tailNode.setNextNode(null);
 
+            return popNode;
+        }
     }
     /*
     contains(value) returns true if the passed in value is in the list and otherwise returns false.
     */
     contains(value){
-
+        currNode = this.headNode;
+        while(currNode.getValue!==value && currNode.getNextNode!==null){
+            currNode = currNode.getNextNode;
+        }
+        if(currNode.getValue===value){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     /*
     find(value) returns the index of the node containing value, or null if not found.
@@ -84,7 +126,7 @@ class LinkedList {
     removeAt(index) that removes the node at the given index.
     */
     removeAt(index){
-        
+
     }
 
 }
