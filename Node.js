@@ -4,7 +4,7 @@
  Node class / factory, containing a value property and a nextNode property, set both as null by default.
 */
 
-class Node {
+export class Node {
     constructor(value, nextNode=null){
         this.value=value;
         this.nextNode=nextNode;

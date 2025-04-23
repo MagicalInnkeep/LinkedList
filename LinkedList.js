@@ -5,9 +5,9 @@
     LinkedList class / factory, which will represent the full list.
 */
 
-import {Node} from './Node'
+import {Node} from './Node.js'
 
-class LinkedList {
+export class LinkedList {
     constructor(){
         this.headNode=null;
         this.tailNode=null;
@@ -20,6 +20,9 @@ class LinkedList {
     append(value){
         const newNode = new Node(value);
         this.length++;
+        if(this.headNode=== null){
+            this.headNode=newNode;
+        }
         if(this.tailNode=== null){}
         else{
             this.tailNode.setNextNode(newNode);
