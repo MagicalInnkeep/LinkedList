@@ -22,7 +22,7 @@ export class Node {
         return this.nextNode;
     }
 
-    setNextNode(nextNode){
+    setNextNode(nextNode=null){
         this.nextNode=nextNode
     }
 }

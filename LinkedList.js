@@ -65,13 +65,13 @@ export class LinkedList {
     at(index) returns the node at the given index
     */
     at(index){
-        if (index>=this.length){
+        if (index>=this.length || !Number.isInteger(index)){
             return null;
         }
         else{
-            currNode = this.headNode;
+            let currNode = this.headNode;
             for(let i=0;i<index;i++){
-                currNode = getNextNode();
+                currNode = currNode.getNextNode();
             }
             return currNode;
         }
@@ -80,14 +80,14 @@ export class LinkedList {
     pop removes the last element from the list
     */
     pop(){
-        if(this.length==0){
+        if(this.size()==0){
             return null;
         }
         else{
             this.length--;
-            popNode=this.tailNode;
-            this.tailNode = at(this.length);
-            this.tailNode.setNextNode(null);
+            let popNode=this.tailNode;
+            this.tailNode = this.at(this.size()-1);
+            this.tailNode.setNextNode();
 
             return popNode;
         }
@@ -96,11 +96,15 @@ export class LinkedList {
     contains(value) returns true if the passed in value is in the list and otherwise returns false.
     */
     contains(value){
-        currNode = this.headNode;
-        while(currNode.getValue!==value && currNode.getNextNode!==null){
-            currNode = currNode.getNextNode;
+        let currNode = this.headNode;
+        let currVal = currNode.getValue();
+        console.log(currNode.getNextNode());
+        let nextNode = currNode.getNextNode();
+
+        while(currVal!==value &&  nextNode!==null){
+            currNode = currNode.getNextNode();
         }
-        if(currNode.getValue===value){
+        if(currNode.getValue() ===value){
             return true;
         }
         else{
