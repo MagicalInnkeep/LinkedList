@@ -63,8 +63,17 @@ console.log(list.tail());
 console.log(list.pop());
 console.log(list.tail());
 console.log("");
+
 //contains test
 console.log("--contains test");
 console.log(list.contains("shark")) //true
+console.log(list.contains("hamster")) //true
 console.log(list.contains(999)); //
 console.log(list.contains("Ships")) //false
+
+//find test
+console.log("");
+console.log("--find test");
+console.log(list.find("shark")) //0
+console.log(list.find(999)); //null
+console.log(list.find("snake")) //5

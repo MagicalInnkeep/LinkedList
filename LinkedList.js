@@ -97,11 +97,8 @@ export class LinkedList {
     */
     contains(value){
         let currNode = this.headNode;
-        let currVal = currNode.getValue();
-        console.log(currNode.getNextNode());
-        let nextNode = currNode.getNextNode();
 
-        while(currVal!==value &&  nextNode!==null){
+        while(currNode.getValue()!==value &&  currNode.getNextNode()!==null){
             currNode = currNode.getNextNode();
         }
         if(currNode.getValue() ===value){
@@ -115,7 +112,19 @@ export class LinkedList {
     find(value) returns the index of the node containing value, or null if not found.
     */
     find(value){
+        let currNode = this.headNode;
+        let index = 0;
 
+        while(currNode.getValue()!==value &&  currNode.getNextNode()!==null){
+            currNode = currNode.getNextNode();
+            index++;
+        }
+        if(currNode.getValue() ===value){
+            return index;
+        }
+        else{
+            return null;
+        }
     }
     /*
     toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
