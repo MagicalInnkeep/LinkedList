@@ -130,7 +130,21 @@ export class LinkedList {
     toString represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
     */
     toString(){
+        let returnString=null;
+        let currNode = this.headNode;
 
+        for(let i=0; i<this.size();i++){
+            let currValue = currNode.getValue();
+            if(returnString!==null && currValue!==null){
+                returnString = returnString + '( '+currValue+' )  -> ';
+            }
+            else{
+                returnString = '( '+currValue+' ) -> ';
+            }
+            currNode = currNode.getNextNode();
+        }   
+        if(returnString!==null){returnString = returnString + 'null'};
+        return returnString;
     }
     /*
     insertAt(value, index) that inserts a new node with the provided value at the given index.

@@ -77,3 +77,12 @@ console.log("--find test");
 console.log(list.find("shark")) //0
 console.log(list.find(999)); //null
 console.log(list.find("snake")) //5
+
+//toString tests
+console.log("");
+console.log("--toString test");
+console.log(list.toString());
+const newList = new LinkedList();
+console.log(newList.toString());
+newList.append("BestList");
+console.log(newList.toString());
