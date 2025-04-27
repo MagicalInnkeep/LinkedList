@@ -86,3 +86,9 @@ const newList = new LinkedList();
 console.log(newList.toString());
 newList.append("BestList");
 console.log(newList.toString());
+
+//insertAt test
+console.log("");
+console.log("--insertAt test");
+list.insertAt("horse",4);
+console.log(list.toString());

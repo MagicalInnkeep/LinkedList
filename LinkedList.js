@@ -150,7 +150,10 @@ export class LinkedList {
     insertAt(value, index) that inserts a new node with the provided value at the given index.
     */
     insertAt(value,index){
-
+        let previousNode = this.at(index-1);
+        let nextNode= this.at(index);
+        let newNode = new Node(value,nextNode);
+        previousNode.setNextNode(newNode);
     }
     /*
     removeAt(index) that removes the node at the given index.
