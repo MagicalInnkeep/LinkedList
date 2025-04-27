@@ -159,7 +159,10 @@ export class LinkedList {
     removeAt(index) that removes the node at the given index.
     */
     removeAt(index){
-
+        let currNode = this.at(index);
+        let previousNode = this.at(index-1);
+        let nextNode= this.at(index+1);
+        previousNode.setNextNode(nextNode);
     }
 
 }

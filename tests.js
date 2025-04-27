@@ -92,3 +92,9 @@ console.log("");
 console.log("--insertAt test");
 list.insertAt("horse",4);
 console.log(list.toString());
+
+//removeAt test
+console.log("");
+console.log("--removeAt test");
+list.removeAt(4);
+console.log(list.toString());
